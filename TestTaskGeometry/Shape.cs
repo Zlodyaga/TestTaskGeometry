@@ -1,5 +1,5 @@
 ﻿// Базовий клас для фігур
-abstract class Shape
+abstract public class Shape
 {
     public string Color { get; set; }
 

@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.OutputEncoding = UTF8Encoding.UTF8; //Команда для налагодження української мови в консолі
+        Console.OutputEncoding = UTF8Encoding.UTF8; // Команда для налагодження української мови в консолі
 
         Random random = new Random();
         List<Shape> shapes = new List<Shape>();

@@ -1,9 +1,27 @@
 ﻿// Клас для трапеції
-class Trapezoid : Shape
+public class Trapezoid : Shape
 {
+    private double height;
+
     public double Base1 { get; set; }
     public double Base2 { get; set; }
-    public double Height { get; set; }
+    public double Height
+    {
+        get { return height; }
+        set
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException("Висота трапеції не може бути від'ємною.");
+            }
+
+            if (value == 0)
+            {
+                throw new ArgumentException("Висота трапеції не може дорівнювати нулю.");
+            }
+            height = value;
+        }
+    }
 
     public Trapezoid(double base1, double base2, double height, string color)
     {

@@ -1,7 +1,25 @@
 ﻿// Клас для трикутника
-class Triangle : Shape
+public class Triangle : Shape
 {
-    public double BaseLength { get; set; }
+    private double baseLength;
+
+    public double BaseLength
+    {
+        get { return baseLength; }
+        set
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException("Довжина основи трикутника не може бути від'ємною.");
+            }
+
+            if (value == 0)
+            {
+                throw new ArgumentException("Довжина основи трикутника не може дорівнювати нулю.");
+            }
+            baseLength = value;
+        }
+    }
     public double Height { get; set; }
     public double Hypotenuse { get; set; }
 

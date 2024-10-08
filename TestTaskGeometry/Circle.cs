@@ -1,7 +1,25 @@
 ﻿// Клас для кола
-class Circle : Shape
+public class Circle : Shape
 {
-    public double Radius { get; set; }
+    private double radius;
+
+    public double Radius
+    {
+        get { return radius; }
+        set
+        {
+            if (value < 0)
+            {
+                throw new ArgumentException("Радіус кола не може бути від'ємним.");
+            }
+
+            if (value == 0)
+            {
+                throw new ArgumentException("Радіус кола не може дорівнювати нулю.");
+            }
+            radius = value;
+        }
+    }
 
     public Circle(double radius, string color)
     {
